@@ -448,10 +448,10 @@ h2{
     }
     &.another_card{
         filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
-        .upload_container{
-            width: 388px;
-            border-radius: 8px;
-        }
+    }
+    .upload_container{
+        width: 388px;
+        border-radius: 8px;
     }
     .name_format_image{
         position: absolute;
@@ -792,6 +792,35 @@ h2{
             padding-top: 5px;
             padding-bottom: 22px;
         }
+        > div{
+            position: relative;
+            label.error{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                color: #131313;
+                background: #FFFFFF;
+                border: 1px solid #ECECEC;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 8px rgba(19, 19, 19, 0.04);
+                border-radius: 16px;
+                display: block;
+                width: 276px;
+                padding: 24px;
+                position: absolute;
+                left: 105%;
+                top: -10px;
+                transition: .4s;
+                opacity: 0;
+                z-index: 10;
+            }
+            &:hover{
+                label.error{
+                    opacity: 1;
+                }
+            }
+        }
     }
     input[type="text"]{
         background: #FFFFFF;
@@ -804,10 +833,11 @@ h2{
         &.name_album{
             background: url('../img/no_check.png') no-repeat center right 15px;
         }
-        &.alert{
+        &.error{
+            border: 2px solid #FF4218;
             background: url('../img/alert.png') no-repeat center right 15px !important;
         }
-        &.good{
+        &.name_album.valid{
             background: url('../img/check.png') no-repeat center right 15px !important;
         }
         
@@ -931,6 +961,11 @@ h2{
     }
 }
 .card{
+    .personalization_new_image,
+    .new_image{
+        width: 388px;
+        height: 194px;
+    }
     &.active_download_image{
         .upload_container{
             display: block;
@@ -965,9 +1000,6 @@ h2{
             top: 94px;
             height: 178px;
         }
-        // .personalization_active_container{
-        //     display: block;        
-        // }
         .no_personalization_image{
             display: block;
         }
@@ -978,6 +1010,37 @@ h2{
             display: block;
         }
 
+    }
+    &.first_card{
+        .personalization_new_image,
+        .new_image{
+            width: 194px;
+            height: 194px;
+        }
+        .name_format_image,
+        .upload_container{
+            width: 194px;
+        }
+        .personalization_active_container{
+            width: 480px;
+            &::before{
+                left: 105px;
+            }
+        }
+        &.personalization_active{
+            .first_img{
+                height: 194px;
+                width: 167px;
+                margin: 0 13px;
+                filter: opacity(0.7);
+            }
+            .last_img{
+                position: absolute;
+                left: 0;
+                top: 55px;
+                height: 194px;
+            }
+        }
     }
     &.personalization_active.active_download_image{
         .show_personalization_container{

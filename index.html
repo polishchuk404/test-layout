@@ -79,16 +79,80 @@
                         <h2>Обкладинка</h2>
                         <div class="bg_checkbox_wrap">
                             <label class="checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" class="personalization_checkbox">
                                 <span class="checkbox_switch"></span>
                             </label>
                         </div>
+                        <button class="show_personalization_container"></button>
                     </div>
-                    <div class="upload_container">
-                        <img class="temporary_image" src="img/icon.png">
-                        <div class="input_container">
-                            <input type="file" name="file">
-                            <span>Перетягніть сюди <br>зображення <br><br>2156 x 5669 px</span>
+                    <div class="upload_container first_img">
+                        <div class="no_download_image">
+                            <img class="temporary_image" src="img/icon.png">
+                            <div class="input_container">
+                                <input type="file" name="file" >
+                                <span>Перетягніть сюди <br>зображення <br><br>2156 x 5669 px</span>
+                            </div>
+                        </div>
+                        <div class="download_image">
+                            <img class="new_image" src="img/photo2.jpg">
+                        </div>
+                    </div>
+                    <div class="upload_container last_img">
+                        <div class="download_personalization_image">
+                            <img class="personalization_new_image" src="img/photo1.jpg">
+                        </div>
+                        <div class="no_personalization_image">
+                            <img class="temporary_image" src="img/icon_personal.png">
+                            <div class="input_container">
+                                <span>Персоналізований <br>розворот</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="name_format_image">
+                        <p>Name.format</p>
+                    </div>
+                    <div class="personalization_active_container">
+                        <div class="flex">
+                            <div class="card another_card">
+                                <div class="name">
+                                    <p class="h2">Обкладинка 1</p>
+                                </div>
+                                <div class="upload_container">
+                                    <div class="no_download_image">
+                                        <img class="temporary_image" src="img/icon.png">
+                                        <div class="input_container">
+                                            <input type="file" name="file" >
+                                            <span>Перетягніть сюди <br>зображення <br><br>2156 x 5669 px</span>
+                                        </div>
+                                    </div>
+                                    <div class="download_image">
+                                        <img class="new_image" src="img/photo1.jpg">
+                                    </div>
+                                </div>
+                                <div class="name_format_image">
+                                    <p>Name.format</p>
+                                </div>
+                            </div>
+                            <div class="card another_card">
+                                <div class="name">
+                                    <p class="h2">Обкладинка 2</p>
+                                </div>
+                                <div class="upload_container">
+                                    <div class="no_download_image">
+                                        <img class="temporary_image" src="img/icon.png">
+                                        <div class="input_container">
+                                            <input type="file" name="file" >
+                                            <span>Перетягніть сюди <br>зображення <br><br>2156 x 5669 px</span>
+                                        </div>
+                                    </div>
+                                    <div class="download_image">
+                                        <img class="new_image" src="img/photo2.jpg">
+                                    </div>
+                                </div>
+                                <div class="name_format_image">
+                                    <p>Name.format</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -505,30 +569,35 @@
                     </div>
                 </div>
                 <section class="form_container">
-                    <div class="container">
-                        <div class="left_col">
-                            <h3>Параметри замовлення</h3>
-                            <h4>Текст наклейки на упаковці </h4>
-                            <input class="text_sticker" type="text" name="text_sticker" maxlength="20" required="required" placeholder="">
-                            <p>Максимум 20 символів</p>
-                            <h4>Назва живого альбому</h4>
-                            <input class="name_album" type="text" name="name_album" required="required" placeholder="">
-                            <p>Обов’язкове поле</p>
-                            <h4>Коментар</h4>
-                            <textarea name="text" maxlength="240"></textarea>
-                            <p>Максимум 240 символів</p>
-                            <input type="submit" class="submit" value="До оформлення" name="submit" >
-                            <input type="hidden" name="whatForm" value="До оформлення">
-                        </div>
-                        <div class="right_col">
-                            <div class="active_text_sticker">
-                                <p>Вкажіть номер класу, школи, або імена молодят<br>чи замовника. При замовленні декількох тиражів<br>їх буде простіше розрізнити. </p>
+                    <form id="form">
+                        <div class="container">
+                            <div class="left_col">
+                                <h3>Параметри замовлення</h3>
+                                <h4>Текст наклейки на упаковці </h4>
+                                <div>
+                                    <input class="text_sticker" type="text" name="text_sticker" maxlength="20" required="required" placeholder="">
+                                </div>
+                                <p>Максимум 20 символів</p>
+                                <h4>Назва живого альбому</h4>
+                                <div>
+                                    <input class="name_album" type="text" name="name_album" required="required" placeholder="">
+                                </div>
+                                <p>Обов’язкове поле</p>
+                                <h4>Коментар</h4>
+                                <textarea name="text" maxlength="240"></textarea>
+                                <p>Максимум 240 символів</p>
+                                <input type="submit" class="submit" value="До оформлення" name="submit" >
                             </div>
-                            <div class="active_name_album">
-                                <p>Вкажіть назву вашого проекту, яка буде <br>відображатися у додатку <b>MemoBook.</b> <br>Наприклад: Київ школа №74 11-А</p>
+                            <div class="right_col">
+                                <div class="active_text_sticker">
+                                    <p>Вкажіть номер класу, школи, або імена молодят<br>чи замовника. При замовленні декількох тиражів<br>їх буде простіше розрізнити. </p>
+                                </div>
+                                <div class="active_name_album">
+                                    <p>Вкажіть назву вашого проекту, яка буде <br>відображатися у додатку <b>MemoBook.</b> <br>Наприклад: Київ школа №74 11-А</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </section>
             </section>
             <aside class="right_side_panel">
