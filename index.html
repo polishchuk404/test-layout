@@ -98,7 +98,7 @@
                             <p class="h2">Розворот 1</p>
                             <div class="bg_checkbox_wrap">
                                 <label class="checkbox">
-                                    <input type="checkbox" name="checkbox">
+                                    <input type="checkbox" class="personalization_checkbox">
                                     <span class="checkbox_switch"></span>
                                 </label>
                             </div>
@@ -180,7 +180,7 @@
                             <p class="h2">Розворот 2</p>
                             <div class="bg_checkbox_wrap">
                                 <label class="checkbox">
-                                    <input type="checkbox">
+                                    <input type="checkbox" class="personalization_checkbox">
                                     <span class="checkbox_switch"></span>
                                 </label>
                             </div>
@@ -262,7 +262,7 @@
                             <p class="h2">Розворот 3</p>
                             <div class="bg_checkbox_wrap">
                                 <label class="checkbox">
-                                    <input type="checkbox">
+                                    <input type="checkbox" class="personalization_checkbox">
                                     <span class="checkbox_switch"></span>
                                 </label>
                             </div>
@@ -344,7 +344,7 @@
                             <p class="h2">Розворот 4</p>
                             <div class="bg_checkbox_wrap">
                                 <label class="checkbox">
-                                    <input type="checkbox">
+                                    <input type="checkbox" class="personalization_checkbox">
                                     <span class="checkbox_switch"></span>
                                 </label>
                             </div>
@@ -421,12 +421,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card another_card personalization_active active_download_image">
+                    <div class="card another_card  active_download_image">
                         <div class="name">
                             <p class="h2">Розворот 5</p>
                             <div class="bg_checkbox_wrap">
                                 <label class="checkbox">
-                                    <input type="checkbox">
+                                    <input type="checkbox" class="personalization_checkbox">
                                     <span class="checkbox_switch"></span>
                                 </label>
                             </div>
@@ -504,125 +504,129 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <aside class="right_side_panel">
-                <p class="h1">Завантаження <i><img src="img/info.png" alt=""></i></p>
-                <div class="download">
-                    <div class="upload_container">
-                        <img class="temporary_image" src="img/icon_scale.png">
-                        <div class="input_container">
-                                <input id="file-input" type="file" name="file">
-                                <label for="file-input">Завантажте файл</label>
-                                <span>або перетягніть його сюди</span>
+                <section class="form_container">
+                    <div class="container">
+                        <div class="left_col">
+                            <h3>Параметри замовлення</h3>
+                            <h4>Текст наклейки на упаковці </h4>
+                            <input class="text_sticker" type="text" name="text_sticker" maxlength="20" required="required" placeholder="">
+                            <p>Максимум 20 символів</p>
+                            <h4>Назва живого альбому</h4>
+                            <input class="name_album" type="text" name="name_album" required="required" placeholder="">
+                            <p>Обов’язкове поле</p>
+                            <h4>Коментар</h4>
+                            <textarea name="text" maxlength="240"></textarea>
+                            <p>Максимум 240 символів</p>
+                            <input type="submit" class="submit" value="До оформлення" name="submit" >
+                            <input type="hidden" name="whatForm" value="До оформлення">
+                        </div>
+                        <div class="right_col">
+                            <div class="active_text_sticker">
+                                <p>Вкажіть номер класу, школи, або імена молодят<br>чи замовника. При замовленні декількох тиражів<br>їх буде простіше розрізнити. </p>
+                            </div>
+                            <div class="active_name_album">
+                                <p>Вкажіть назву вашого проекту, яка буде <br>відображатися у додатку <b>MemoBook.</b> <br>Наприклад: Київ школа №74 11-А</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="fixed_container">
-                    <p class="h1">Деталі замовлення</p>
-                    <div class="information">
+                </section>
+            </section>
+            <aside class="right_side_panel">
+                <div class="fix_wrap">
+                    <div class="fixed_container fix_download">
+                        <p class="h1">Завантаження <i><img src="img/info.png" alt=""></i></p>
                         <div class="download">
-                            <div class="row">
-                                <div class="col">
-                                    <p class="h">Ціна</p>
-                                </div>
-                                <div class="col">
-                                    <p class="h">Тираж</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="price"><span>249</span> UAH / екз.</p>
-                                    <p class="price"><span>249</span> UAH / тираж</p>
-                                </div>
-                                <div class="col">
-                                    <div class="quantity_inner">        
-                                        <button class="bt_minus"></button>
-                                        <input type="text" class="quantity" value="1" data-max-count="20">
-                                        <button class="bt_plus"></button>
-                                    </div>
+                            <div class="upload_container">
+                                <img class="temporary_image" src="img/icon_scale.png">
+                                <div class="input_container">
+                                        <input id="file-input" type="file" name="file">
+                                        <label for="file-input">Завантажте файл</label>
+                                        <span>або перетягніть його сюди</span>
                                 </div>
                             </div>
-                            <div class="more_info_container">
+                        </div>
+                    </div>
+                    <div class="fixed_container fix_info">
+                        <p class="h1">Деталі замовлення</p>
+                        <div class="information">
+                            <div class="download">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="h">Буде готово</p>
-                                        <p>Якщо замовити зараз</p>
-                                        <p class="h">13.03.2020</p>
+                                        <p class="h">Ціна</p>
                                     </div>
                                     <div class="col">
-                                        <p class="h">Терміновість</p>
-                                        <p>7 робочих днів</p>
-                                        <div class="bg_checkbox_wrap">
-                                            <label class="checkbox">
-                                                <input type="checkbox">
-                                                <span class="checkbox_switch"></span>
-                                            </label>
+                                        <p class="h">Тираж</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="price"><span>249</span> UAH / екз.</p>
+                                        <p class="price"><span>249</span> UAH / тираж</p>
+                                    </div>
+                                    <div class="col">
+                                        <div class="quantity_inner">        
+                                            <button class="bt_minus"></button>
+                                            <input type="text" class="quantity" value="1" data-max-count="20">
+                                            <button class="bt_plus"></button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p>Тип</p>
+                                <div class="more_info_container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="h">Буде готово</p>
+                                            <p>Якщо замовити зараз</p>
+                                            <p class="h">13.03.2020</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="h">Терміновість</p>
+                                            <p>7 робочих днів</p>
+                                            <div class="bg_checkbox_wrap">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="checkbox_switch"></span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <p>Фотокнига: <b>IceBook</b></p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>Тип</p>
+                                        </div>
+                                        <div class="col">
+                                            <p>Фотокнига: <b>IceBook</b></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p><b>Книжковий <br>блок</b></p>
+                                        </div>
+                                        <div class="col">
+                                            <p>Тип паперу: <b>Матовий</b></p>
+                                            <p>Основа листа: <b>Термоклей</b></p>
+                                            <p>Кількість <b>розворотів: 4</b></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p><b>Обкладинка</b></p>
+                                        </div>
+                                        <div class="col">
+                                            <p>Матеріал:<b>Фото обкладинка</b></p>
+                                            <p>Оздоблення: <b>Шильд</b></p>
+                                            <p>Колір: <b>Лотос</b></p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p><b>Книжковий <br>блок</b></p>
-                                    </div>
-                                    <div class="col">
-                                        <p>Тип паперу: <b>Матовий</b></p>
-                                        <p>Основа листа: <b>Термоклей</b></p>
-                                        <p>Кількість <b>розворотів: 4</b></p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p><b>Обкладинка</b></p>
-                                    </div>
-                                    <div class="col">
-                                        <p>Матеріал:<b>Фото обкладинка</b></p>
-                                        <p>Оздоблення: <b>Шильд</b></p>
-                                        <p>Колір: <b>Лотос</b></p>
-                                    </div>
-                                </div>
+                                <button class="more_info">Більше інформації</button>
                             </div>
-                            <button class="more_info">Більше інформації</button>
                         </div>
                     </div>
                 </div>
             </aside>
         </article>
-        <section class="form_container">
-            <div class="container">
-                <div class="left_col">
-                    <h3>Параметри замовлення</h3>
-                    <h4>Текст наклейки на упаковці </h4>
-                    <input class="text_sticker" type="text" name="text_sticker" required="required" placeholder="">
-                    <p>Максимум 20 символів</p>
-                    <h4>Назва живого альбому</h4>
-                    <input class="name_album" type="text" name="name_album" required="required" placeholder="">
-                    <p>Обов’язкове поле</p>
-                    <h4>Коментар</h4>
-                    <textarea name="text" maxlength="240"></textarea>
-                    <p>Максимум 240 символів</p>
-                    <input type="submit" class="consult" value="До оформлення" name="submit" >
-                    <input type="hidden" name="whatForm" value="До оформлення">
-                </div>
-                <div class="right_col">
-                    <div class="active_text_sticker">
-                        <p>Вкажіть номер класу, школи, або імена молодят<br>чи замовника. При замовленні декількох тиражів<br>їх буде простіше розрізнити. </p>
-                    </div>
-                    <div class="active_name_album">
-                        <p>Вкажіть назву вашого проекту, яка буде <br>відображатися у додатку <b>MemoBook.</b> <br>Наприклад: Київ школа №74 11-А</p>
-                    </div>
-                </div>
-            </div>
-    </section>
     </main>
-
+    
     <script src="js/main.min.js"></script>
 </body>
 </html>

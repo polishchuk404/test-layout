@@ -81,12 +81,15 @@ main{
     padding-top: 232px;
 }
 header{
+    max-width: 1440px;
+    margin: 0 auto;
     width: 100%;
     background: #fff;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    right: 0;
+    z-index: 101;
 }
 article,
 .container{
@@ -332,10 +335,12 @@ h2{
 .photo_redactor{
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 }
 .left_main_panel{
     width: 816px;
 }
+
 .right_side_panel{
     width: 296px;
     i{
@@ -345,6 +350,16 @@ h2{
     .upload_container{
         .input_container{
             padding-top: 5px;
+            position: relative;
+            z-index: 2;
+        }
+    }
+    .fixed_container{
+        background: #fff;
+        width: 296px;
+        z-index: 99;
+        &.fix_info{
+            padding-top: 24px;
         }
     }
 }
@@ -353,7 +368,6 @@ h2{
     box-sizing: border-box;
     border-radius: 8px; 
     padding: 24px;
-    margin-bottom: 24px;
 }
 .upload_container {
     display: flex;
@@ -714,13 +728,15 @@ h2{
 
 }
 .form_container{
+    overflow: hidden;
+    margin-top: 18px;
     .container{
-        margin-top: 18px;
         border-top: 1px solid #ECECEC;
         display: flex;
 
     }
     .right_col{
+        position: relative;
         p{
             font-style: normal;
             font-weight: normal;
@@ -732,24 +748,32 @@ h2{
         & > div{
             width: 505px;
             height: 640px;
-            position: relative;
+            position: absolute;
+            left: 0;
+            transition: .5s;
             p{
                 position: absolute;
             }
             &.active_text_sticker{
+                top: -1000px;
                 background: url('../img/book.png') no-repeat top 0px right 0px;  
-                display: none;
                 p{
                     top: 438px;
                     left: 161px;
                 }
+                &.active{
+                    top: 0;
+                }
             }
             &.active_name_album{
+                top: 1000px;
                 background: url('../img/phone2.png') no-repeat top 143px right 0px;
-                display: none;
                 p{
                     top: 78px;
                     left: 194px;
+                }
+                &.active{
+                    top: 0;
                 }
             }
         }
@@ -872,6 +896,10 @@ h2{
     right: 0;
     margin: 0 auto;
     top: 174px;
+    &.active{
+        transform: rotate(180deg);
+    }
+
 
 }
 .personalization_active_container{
@@ -937,9 +965,9 @@ h2{
             top: 94px;
             height: 178px;
         }
-        .personalization_active_container{
-            display: block;        
-        }
+        // .personalization_active_container{
+        //     display: block;        
+        // }
         .no_personalization_image{
             display: block;
         }
