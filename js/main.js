@@ -48,13 +48,13 @@ $('.name_album').focus(function() {
 });
 
 $('.personalization_checkbox').click(function(){
+    const $card_container = $(this).closest('.card.another_card');
 	if ($(this).is(':checked')){
-		$(this).closest('.card.another_card')
-        .addClass('personalization_active');
+		$card_container.addClass('personalization_active');
 	} else {
-		$(this).closest('.card.another_card')
-        .removeClass('personalization_active');
-	}
+		$card_container.removeClass('personalization_active');
+        $card_container.find('.personalization_active_container').hide()
+    }
 });   
 $( '.show_personalization_container' ).click(function() {
     $(this)
